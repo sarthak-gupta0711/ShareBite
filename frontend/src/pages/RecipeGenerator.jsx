@@ -12,10 +12,12 @@ const RecipeGenerator = () => {
     // Optionally fetch all known ingredients to give suggestions
     const fetchAll = async () => {
         try {
-            const res = await fetch('http://localhost:5000/api/recipes');
+            const res = await fetch('http://localhost:5001/api/recipes');
             const data = await res.json();
             setAllRecipes(data.map(r => r.leftover));
-        } catch (err) {}
+        } catch (err) {
+            console.error(err);
+        }
     }
     fetchAll();
   }, []);
@@ -27,7 +29,7 @@ const RecipeGenerator = () => {
     setRecipe('');
 
     try {
-      const res = await fetch('http://localhost:5000/api/recipes/find', {
+      const res = await fetch('http://localhost:5001/api/recipes/find', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ leftover })
@@ -39,6 +41,7 @@ const RecipeGenerator = () => {
         setError(data.error || 'Recipe not found');
       }
     } catch (err) {
+      console.error(err);
       setError('Failed to fetch recipe.');
     } finally {
       setLoading(false);

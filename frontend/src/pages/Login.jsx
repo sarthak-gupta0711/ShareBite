@@ -12,7 +12,7 @@ const Login = () => {
   const submitHandler = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch('http://localhost:5000/api/auth/login', {
+      const res = await fetch('http://localhost:5001/api/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password, role })
@@ -26,6 +26,7 @@ const Login = () => {
         setError(data.message || 'Login failed');
       }
     } catch (err) {
+      console.error(err);
       setError('Server error');
     }
   };

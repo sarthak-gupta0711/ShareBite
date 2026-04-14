@@ -16,7 +16,7 @@ const Navbar = () => {
       <div className="container">
         <Link to="/" className="text-gradient heading-md" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
           <Leaf color="var(--color-primary)" />
-          EcoEats
+          ShareBite
         </Link>
         
         <ul className="nav-links">

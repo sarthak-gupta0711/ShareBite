@@ -28,7 +28,7 @@ const Dashboard = () => {
     if (image) data.append('food-image', image);
 
     try {
-      const res = await fetch('http://localhost:5000/api/listings', {
+      const res = await fetch('http://localhost:5001/api/listings', {
         method: 'POST',
         body: data
       });

@@ -12,7 +12,7 @@ const Home = () => {
             <span className="text-gradient">go to waste.</span>
           </h1>
           <p className="heading-md" style={{ color: 'var(--color-text-muted)', marginBottom: '3rem', fontWeight: 400, fontSize: '1.25rem' }}>
-            EcoEats connects food sellers with surplus ingredients to eco-conscious consumers. Save money, save the planet.
+            ShareBite connects food sellers with surplus ingredients to eco-conscious consumers. Save money, save the planet.
           </p>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
             <Link to="/food-list" className="btn btn-primary">

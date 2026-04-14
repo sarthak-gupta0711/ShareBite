@@ -17,7 +17,7 @@ const RegisterSeller = () => {
     }
     
     try {
-      const res = await fetch('http://localhost:5000/api/auth/register_seller', {
+      const res = await fetch('http://localhost:5001/api/auth/register_seller', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
@@ -31,6 +31,7 @@ const RegisterSeller = () => {
         setError(data.message || 'Registration failed');
       }
     } catch (err) {
+      console.error(err);
       setError('Server error');
     }
   };

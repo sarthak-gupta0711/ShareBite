@@ -8,7 +8,7 @@ const FoodList = () => {
   useEffect(() => {
     const fetchListings = async () => {
       try {
-        const res = await fetch('http://localhost:5000/api/listings');
+        const res = await fetch('http://localhost:5001/api/listings');
         const data = await res.json();
         setListings(data);
       } catch (err) {
@@ -36,11 +36,11 @@ const FoodList = () => {
               No food listings available at the moment. Check back soon!
             </div>
           ) : (
-            listings.map((item, index) => (
+            listings.map((item) => (
               <div key={item._id} className="glass-card delay-100" style={{ overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
                 <div style={{ height: '200px', backgroundColor: 'rgba(0,0,0,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   {item.picture_url ? (
-                    <img src={`http://localhost:5000/${item.picture_url}`} alt={item.food_name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    <img src={`http://localhost:5001/${item.picture_url}`} alt={item.food_name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                   ) : (
                     <ImageIcon size={48} color="var(--color-text-muted)" />
                   )}
